@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<resources>
+
+    <string name="app_name">ΠΑΦΟΣ2017</string>
+    <string name="european_capital_of_culture">Πολιτιστική Πρωτεύουσα της Ευρώπης</string>
+    <string name="follow_our_journey">Ακολούθησε το Ταξίδι μας</string>
+
+    <string name="whats_next">Επόμενα</string>
+    <string name="no_events">Δεν υπάρχουν επόμενες εκδηλώσεις</string>
+    <string name="need_login">Για να εξατομικεύσετε την εφαρμογή, θα πρέπει να κάνετε </string>
+    <!--<string name="common_signin_button_text_long">"Συνδεθείτε με το Google"</string>-->
+    <string name="internet_problems">Πρόβλημα με τη σύνδεση στο ίντερνετ. Τα δεδομένα μπορεί να μην είναι ακριβή</string>
+    <string name="share">Μοιράσου</string>
+    <string name="get_the_app_link"><Data><![CDATA[<a href=\"https://www.google.com\">Κατέβασε τη εφαρμογή του ΠΑΦΟΣ2017 εδώ</a>]]></Data></string>
+    <string name="added_to_schedule">Προστέθηκε στο Πρόγραμμα Μου</string>
+    <string name="removed_from_schedule">Αφαιρέθηκε από το Πρόγραμμα Μου</string>
+    <string name="no_events_on_day">Δεν έχετε εκδηλώσεις στη συγκεκριμένη μέρα</string>
+    <string name="no_events_in_schedule">Δεν έχετε προσθέσει εκδηλώσεις στο πράγραμμα σας \u2639</string>
+
+
+    <!--Navigation drawer items-->
+    <string name="my_schedule">Το ημερολόγιο μου</string>
+    <string name="map">Χάρτης</string>
+    <string name="explore">Γύρω μου</string>
+    <string name="social">Ακολούθησε το Ταξίδι μας</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="about">Πληροφορίες</string>
+
+    <!--Landmarks-->
+    <string name="landmark">Αξιοθέατο</string>
+
+    <!--Intro-->
+    <string name="select_language">Επιλέξτε γλώσσα</string>
+    <string name="welcome">Καλωσορίσατε!</string>
+    <string name="stay_updated">Ενημερωθείτε για το τι συμβαίνει</string>
+    <string name="events">Εκδηλώσεις</string>
+    <string name="see_events">Ενημερωθείτε για τις εκδηλώσεις</string>
+    <string name="add_to_calendar">Προσθέστε στο ημερολόγιο σας για υπενθυμίσεις</string>
+    <string name="explore_intro">Εξερευνήστε</string>
+    <string name="discover_pafos">Ανακαλύψτε την πόλη της Πάφου, τα αξιοθέατα της και τους χώρους εκδηλώσεων</string>
+    <string name="social_intro">Κοινωνικά δίκτυα</string>
+    <string name="social_description">Παρακολουθήστε μας με συνδέσμους κατευθείαν από την εφαρμογή</string>
+
+
+    <!--Languages-->
+    <string name="dialog_select_language">Επιλέξτε γλώσσα (χρειάζεται επανεκκίνηση της εφαρμογής)</string>
+    <string name="language">Γλώσσα</string>
+    <string name="greek">Ελληνικά</string>
+    <string name="english">Αγγλικά</string>
+    <string name="russian">Ρωσικά</string>
+
+    <!--Notification items-->
+    <string name="notify_me">Ειδοποιήσεις για το πρόγραμμα μου</string>
+    <string name="never">Ποτέ\</string>
+    <string name="one_hour">1 ώρα πριν</string>
+    <string name="two_hours">2 ώρες πριν</string>
+    <string name="four_hours">4 ώρες πριν</string>
+    <string name="eight_hours">8 ώρες πριν</string>
+    <string name="twelve_hours">12 ώρες πριν</string>
+    <string name="twentyfour_hours">24 ώρες πριν</string>
+
+    <string name="pafos2017_event">Εκδήλωση</string>
+    <string name="event_starts_in">Αρχίζει σε %1$s %2$s </string>
+    <string name="event_started_ago">Έχει αρχίσει εδώ και %1$s %2$s</string>
+    <string name="hour">ώρα</string>
+    <string name="hours">ώρες</string>
+
+    <!--Feedback-->
+    <string name="feedback_text">Η γνώμη σας μετράει.\nΚάντε μας εισηγήσεις, ή πείτε μας για όποια προβλήματα έχετε αντιμετωπίσει.</string>
+    <string name="send_feedback">Στείλτε μας σχόλια</string>
+    <string name="feedback_sent">Ευχαριστούμε! Το σχόλιο σας έχει σταλεί</string>
+
+
+    <string name="connection_failed">Η σύνδεση απέτυχε</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+
+
+    <string name="pafos_event">Εκδήλωση ΠΑΦΟΣ2017</string>
+    <string name="sign_in_success">Συνδέθηκες!</string>
+    <string name="sign_in_fail">Η σύνδεση απέτυχε</string>
+    <string name="title_activity_item_view">Λεπτομέρειες</string>
+    <string name="login">Σύνδεση</string>
+    <string name="logout">Αποσύνδεση</string>
+    <string name="rate_app">Βαθμολογήστε την εφαρμογή</string>
+    <string name="rate_later">ΑΡΓΟΤΕΡΑ…</string>
+    <string name="rate_text">Είστε ευχαριστημένοι με την εφαρμογή αυτή; Βαθμολογήστε μας και πείτε μας τη γνώμη σας στο Play Store</string>
+    <string name="rate_yes">NAI!</string>
+    <string name="rate_no">ΟΧΙ :(</string>
+    <string name="click_to_connect">Πατήστε για να συνδεθείτε</string>
+    <string name="connect">Συνδεθείτε</string>
+    <string name="disconnected">Αποσυνδεδεμένος</string>
+</resources>

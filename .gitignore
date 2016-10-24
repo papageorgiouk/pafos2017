@@ -1,0 +1,12 @@
+*.iml
+.gradle
+/local.properties
+.idea
+.DS_Store
+/build
+/captures
+/gen
+/projectFilesBackup
+google_maps.txt
+youtube_key.txt
+/app/src/main/res/values/api_endpoints.xml

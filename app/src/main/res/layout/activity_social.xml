@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.trackandtalk.pafos17.ui.SocialActivityUnused"
+    android:fillViewport="true"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:title="@string/social"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/main_box"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:layout_heightPercent="40%"
+        android:layout_below="@id/toolbar"
+        android:background="@color/colorAlex"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:baselineAligned="false"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            >
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/pafos2017_logo_transparent"
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:id="@+id/follow_our_journey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/follow_our_journey"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:textSize="28sp"
+                android:textColor="#000"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical"
+            android:gravity="clip_vertical"
+
+            >
+
+            <ImageView
+                android:id="@+id/social_youtube"
+                android:layout_width="@dimen/social_icons_square"
+                android:layout_height="@dimen/social_icons_square"
+                android:padding="@dimen/social_icons_padding"
+                app:srcCompat="@drawable/youtube_play"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/social_instagram"
+                android:layout_width="@dimen/social_icons_square"
+                android:layout_height="@dimen/social_icons_square"
+                android:padding="@dimen/social_icons_padding"
+                app:srcCompat="@drawable/ic_instagr"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="onClick"
+
+                />
+
+            <ImageView
+                android:id="@+id/social_twitter"
+                android:layout_width="@dimen/social_icons_square"
+                android:layout_height="@dimen/social_icons_square"
+                android:padding="@dimen/social_icons_padding"
+                app:srcCompat="@drawable/twitter_box"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="onClick"
+
+                />
+
+            <ImageView
+                android:id="@+id/social_facebook"
+                android:layout_width="@dimen/social_icons_square"
+                android:layout_height="@dimen/social_icons_square"
+                android:padding="@dimen/social_icons_padding"
+                app:srcCompat="@drawable/facebook_box"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:onClick="onClick"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/main_box"
+        android:weightSum="3"
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+
+            >
+
+            <TextView
+                android:id="@+id/hashtag_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#pafos2017"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:id="@+id/hash1_twitter"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/twitter_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginRight="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+
+                <ImageView
+                    android:id="@+id/hash1_fb"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/facebook_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginLeft="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/hashtag_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#PassionatelyPafos"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:id="@+id/hash2_twitter"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/twitter_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginRight="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+
+                <ImageView
+                    android:id="@+id/hash2_fb"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/facebook_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginLeft="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/hashtag_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#OpenAirFactory"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:id="@+id/hash3_twitter"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/twitter_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginRight="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+
+                <ImageView
+                    android:id="@+id/hash3_fb"
+                    android:layout_width="@dimen/social_icons_square"
+                    android:layout_height="@dimen/social_icons_square"
+                    app:srcCompat="@drawable/facebook_box_white"
+                    android:padding="@dimen/social_icons_padding_less"
+                    android:layout_marginLeft="@dimen/social_icons_distance"
+                    android:clickable="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.percent.PercentRelativeLayout>

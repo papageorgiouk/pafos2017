@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<resources>
+    <color name="colorPrimary">#ffe67f09</color>
+    <color name="colorPrimaryDark">#ffd95c13</color>
+    <color name="colorPrimaryLight">#ffeba102</color>
+    <color name="colorHighlight">#CCFFCC80</color>
+    <color name="colorAccent">#ff009de0</color>
+    <color name="colorAccentLight">#ff64B5F6</color>
+    <color name="colorAlex">#ffe0b2</color>
+    <color name="colorWhite">#ffffffff</color>
+    <color name="textWhite">#bbffffff</color>
+    <color name="scrim">#99323232</color>
+    <color name="error">#8B1820</color>
+    <color name="success">#4F8A10</color>
+    <color name="background">#f5f5f5</color>
+
+    <color name="navdrawer_background">#ffffffff</color>
+
+    <color name="body_text_1_inverse">#deffffff</color>
+    <color name="body_text_2_inverse">#aaffffff</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="text_primary_dark">#de000000</color>
+    <color name="text_secondary_dark">#8a000000</color>
+
+    <!--Pastel colors-->
+    <color name="purple_pastel">#9575CD</color>
+    <color name="indigo_pastel">#7986CB</color>
+    <color name="green_pastel">#81C784</color>
+    
+    <!--Intro-->
+    <color name="intro_green">#43A047</color>
+    <!--<color name="intro_light_blue">#4FC3F7</color>-->
+    <color name="intro_teal">#80CBC4</color>
+    <color name="intro_orange">#FF9800</color>
+
+    <color name="intro_dark_blue">#061A40</color>
+    <color name="intro_blue">#0353A4</color>
+    <color name="intro_light_blue">#006DAA</color>
+    <color name="intro_muted_blue">#003559</color>
+    <color name="intro_green_blue">#315659</color>
+
+    <!--Social colors-->
+    <color name="facebook_blue">#3b5998</color>
+    <color name="twitter_blue">#1DA1F2</color>
+    <color name="youtube_red">#e52d27</color>
+
+</resources>

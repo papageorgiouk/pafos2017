@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:elevation="16dp"
+    >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/images_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        android:visibility="visible"
+        app:layout_collapseMode="parallax"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:fillViewport="true"
+        android:layout_gravity="fill_vertical"
+        app:elevation="16dp"
+        android:visibility="visible"
+        android:scrollbars="vertical"
+        android:minHeight="600dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:fillViewport="true"
+            android:minHeight="600dp"
+            >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/colorAccentLight"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/landmark_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/sub"
+                        tools:text="Landmark title"
+                        android:textColor="@android:color/white"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:onClick="onPanelTitleClick"
+
+                        style="@style/TextAppearance.AppCompat.Title"
+                        />
+
+                    <TextView
+                        android:id="@+id/sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/landmark"
+                        android:layout_alignParentBottom="true"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+                        />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                >
+
+                <ImageButton
+                    android:id="@+id/map_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map_48pt_2x"
+                    android:padding="8dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    />
+
+                <ImageButton
+                    android:id="@+id/share_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share_48pt_2x"
+                    android:padding="8dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:onClick="onClick"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:cardElevation="2dp"
+                app:contentPaddingTop="16dp"
+                android:clickable="false"
+                app:contentPaddingBottom="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/keyline_1"
+                    android:fillViewport="true"
+
+                    >
+
+
+                    <TextView
+                        android:id="@+id/landmark_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:fillViewport="true"
+
+                        android:layout_gravity="fill_vertical"
+                        android:layout_marginBottom="8dp"
+                        tools:text="Landmark description. Lorem ipsum dolor sit amet, no copiosae instructior est. Dolorem intellegat necessitatibus ne qui, eu vix luptatum ullamcorper comprehensam. Hinc putent ut pro, veri integre abhorreant eam ea. Facer argumentum mea ea, te quo error imperdiet. Vix persius reprehendunt ei.\n
+    Duo in partem qualisque honestatis, eos ullum epicurei eu. Ex mei verear tacimates. Eos oportere disputando eu, ea velit tantas accumsan nec. Sea purto volumus maiestatis ut, vim inani persius intellegat at. In possit epicurei conclusionemque sit. Ius dolore nominavi deserunt ad, cu sed volumus evertitur."
+
+                        />
+
+                    <TextView
+                        android:id="@+id/landmark_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Address, 22 Fake Str."
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="16dp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/landmark_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Contact info."
+                        android:autoLink="phone|email"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

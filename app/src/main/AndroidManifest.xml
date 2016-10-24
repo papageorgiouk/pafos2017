@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.trackandtalk.pafos17">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:name=".CulturalCapitalApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_white"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:configChanges="layoutDirection|locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:configChanges="layoutDirection|locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="layoutDirection|locale"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"
+                      android:host="www.pafos2017.eu"
+                      android:pathPrefix="/ημερολόγιο-εκδηλώσεων"
+                    />
+                <data android:scheme="http"
+                      android:host="www.pafos2017.eu"
+                      android:pathPrefix="/event-directory-2"
+                    />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.eventdetails.EventActivity"
+            android:configChanges="layoutDirection|locale"
+            android:label=" "
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.EventView"/>
+        <activity
+            android:name=".ui.schedule.ScheduleActivity"
+            android:configChanges="layoutDirection|locale"
+            android:label="@string/my_schedule"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.Schedule"/>
+        <activity
+            android:name=".ui.SocialActivityUnused"
+            android:configChanges="layoutDirection|locale"
+            android:label="@string/social"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.Social"/>
+
+        <activity
+            android:name=".ui.SocialActivity"
+            android:label="@string/social"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.Social"
+            />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
+
+        <activity
+            android:name=".ui.explore.ExploreActivity"
+            android:configChanges="layoutDirection|locale"
+            android:label="@string/map"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.Explore">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.trackandtalk.pafos17.ui.main.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.signin.GoogleSignInActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|layoutDirection|locale"
+            android:label="@string/title_activity_google_sign_in"
+            android:theme="@style/AppTheme.Translucent.GoogleSignIn"/>
+
+        <receiver
+            android:name=".notifications.OnBootReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:label="SetAlarmsAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".notifications.NotificationPublisher"
+            android:enabled="true"
+            android:exported="false"
+            android:label="NotificationPublisher"/>
+
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:configChanges="layoutDirection|locale"
+            android:label="@string/settings"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SettingsView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.trackandtalk.pafos17.ui.main.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.settings.AboutActivity"
+            android:configChanges="layoutDirection|locale"
+            android:label="@string/about">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.trackandtalk.pafos17.ui.main.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".ui.feedback.FeedbackActivity"
+            android:configChanges="layoutDirection|locale"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.FeedBack"
+            android:windowSoftInputMode="adjustResize"
+            >
+        </activity>
+        <activity
+            android:name=".ui.explore.ImageViewerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|layoutDirection|locale"
+            android:label="@string/title_activity_image_viewer"
+            android:theme="@style/AppTheme.Translucent.ImageViewer">
+        </activity>
+    </application>
+
+</manifest>

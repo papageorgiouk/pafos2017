@@ -1,0 +1,193 @@
+<!--
+  ~ /*
+  ~  * Copyright (C) 2016 Track & Talk Ltd
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<resources>
+    <string name="app_name">PAFOS2017</string>
+    <string name="action_settings">Settings</string>
+    <string name="follow_our_journey">Follow our Journey</string>
+    <string name="european_capital_of_culture">European Capital of Culture</string>
+
+    <string name="drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="title_activity_item_view">Details</string>
+    <string name="whats_next">What\'s next</string>
+    <string name="no_events">No upcoming events</string>
+    <string name="need_login">To personalise your app, you\'ll need to </string>
+    <string name="sign_in_fail">Sign in failed!</string>
+    <string name="sign_in_success">Successfully signed in!</string>
+    <string name="connection_failed">Connection Failed</string>
+    <string name="internet_problems">Problems with internet connection. Data may be out of date</string>
+    <string name="share">Share</string>
+    <string name="get_the_app_link"><Data><![CDATA[<a href=\"https://www.google.com\">Get the official PAFOS2017 app here</a>]]></Data></string>
+    <string name="pafos_event">PAFOS2017 event</string>
+    <string name="sent_from">Sent from the official PAFOS2017 app</string>
+    <string name="added_to_schedule">Added to My Schedule</string>
+    <string name="removed_from_schedule">Removed from My Schedule</string>
+    <string name="rate_app">Rate the app?</string>
+    <string name="rate_text">Enjoying the app? Rate us on the play store, and maybe leave us a comment</string>
+    <string name="rate_later">MAYBE LATER…</string>
+    <string name="rate_no">NO :(</string>
+    <string name="rate_yes">YES!</string>
+    <string name="no_events_on_day">No events on selected day</string>
+    <string name="no_events_in_schedule">You haven\'t added any events on your schedule \u2639</string>
+
+
+    <!--Intro-->
+    <string name="select_language">Select your language</string>
+    <string name="welcome">Welcome!</string>
+    <string name="stay_updated">Stay updated with what\'s happening</string>
+    <string name="events">Events</string>
+    <string name="see_events">Stay up to date with upcoming events</string>
+    <string name="add_to_calendar">Add them to your calendar and get reminders</string>
+    <string name="explore_intro">Explore</string>
+    <string name="discover_pafos">Discover the city of Pafos, its landmarks and event venues</string>
+    <string name="social_intro">Social</string>
+    <string name="social_description">Follow the links to social media, directly from the app</string>
+
+    <!--placeholders-->
+    <string name="placeholder_event_title" translatable="false">EVENT TITLE: This is an event with its title</string>
+    <string name="placeholder_event_subtitle" translatable="false">Fri 31/12 20:00 - Sat 01/01 07:00</string>
+    <string name="start_date_format">%1$s </string>
+    <string name="end_date_format" translatable="false">- %1$s</string>
+    <string name="version" translatable="false">Version %1$s</string>
+
+    <!--Account-->
+    <string name="login">Sign In</string>
+    <string name="logout">Sign out</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connect">Connect</string>
+    <string name="click_to_connect">Click to connect</string>
+
+    <!--Navigation drawer items-->
+    <string name="my_schedule">My Events calendar</string>
+    <string name="map">Map</string>
+    <string name="explore">Explore</string>
+    <string name="social">Follow our Journey</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+
+    <!--Transitions-->
+    <string name="image_transition" translatable="false">image_transition</string>
+    <string name="title_transition" translatable="false">title_transition</string>
+    <string name="transition_google_login" translatable="false">transition_google_login</string>
+
+    <string name="title_activity_explore">Map</string>
+    <string name="title_activity_google_sign_in">GoogleSignInActivity</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+
+    <!--Landmarks-->
+    <string name="landmark">Landmark</string>
+
+    <!--Web-->
+    <string name="web_url" translatable="false">http://www.pafos2017.eu/</string>
+    <string name="short_url" translatable="false">www.pafos2017.eu</string>
+    <string name="github_repo" translatable="false">https://github.com/papageorgiouk/pafos2017</string>
+    <string name="youtube_page" translatable="false">https://www.youtube.com/user/pafos2017</string>
+    <string name="instagram_page" translatable="false">https://www.instagram.com/pafos2017_official/</string>
+    <string name="twitter_page" translatable="false">https://twitter.com/pafos_2017</string>
+    <string name="facebook_page" translatable="false">https://www.facebook.com/pafos2017</string>
+    <string name="hashtag1" translatable="false">pafos2017</string>
+    <string name="hashtag2" translatable="false">PassionatelyPafos</string>
+    <string name="hashtag3" translatable="false">OpenAirFactory</string>
+
+    <string name="zoom_play_store" translatable="false">https://play.google.com/store/apps/details?id=com.trackandtalk.android</string>
+    <string name="app_play_store" translatable="false">https://play.google.com/store/apps/details?id=com.trackandtalk.pafos17</string>
+
+    <!--Languages-->
+    <string name="language">Language</string>
+    <string name="greek">Greek</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+
+    <!--Notification items-->
+    <string name="notify_me">Notify me about my scheduled events</string>
+    <string name="never">Never</string>
+    <string name="one_hour">1 hour before</string>
+    <string name="two_hours">2 hours before</string>
+    <string name="four_hours">4 hours before</string>
+    <string name="eight_hours">8 hours before</string>
+    <string name="twelve_hours">12 hours before</string>
+    <string name="twentyfour_hours">24 hours before</string>
+
+    <!-- Strings related to Settings -->
+
+    <!--Languages-->
+    <string name="dialog_select_language">Select language (requires app restart)</string>
+    <string-array name="languages">
+        <item>@string/greek</item>
+        <item>@string/english</item>
+    </string-array>
+
+    <!--Flags-->
+    <integer-array name="flags">
+        <item>@drawable/flag_greece</item>
+        <item>@drawable/flag_uk</item>
+    </integer-array>
+
+    <string-array name="language_values">
+        <item>el</item>
+        <item>en</item>
+    </string-array>
+
+    <!--Notifications-->
+    <string-array name="notification_hours">
+        <item>@string/never</item>
+        <item>@string/one_hour</item>
+        <item>@string/two_hours</item>
+        <item>@string/four_hours</item>
+        <item>@string/eight_hours</item>
+        <item>@string/twelve_hours</item>
+        <item>@string/twentyfour_hours</item>
+    </string-array>
+
+    <string-array name="notification_hours_values">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>24</item>
+    </string-array>
+
+    <string name="pafos2017_event">Event</string>
+    <string name="event_starts_in">Starts in %1$s %2$s</string>
+    <string name="event_started_ago">Started %1$s %2$s ago</string>
+    <string name="hour">hour</string>
+    <string name="hours">hours</string>
+
+
+    <!--Legal-->
+    <string name="proudly_made_in">Proudly made in Pafos by the Zoom Cyprus team</string>
+    <string name="copyright" translatable="false">\u00A9 2016 Track \u0026 Talk Ltd\n</string>
+    <string name="copyright_license" translatable="false"><Data><![CDATA[Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at<br><br>&nbsp;http://www.apache.org/licenses/LICENSE-2.0<br><br>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.]]></Data></string>
+    <string name="pafos_trademarks">European Capital of Culture - PAFOS2017 and the PAFOS2017 logo are registered and unregistered trademarks of the Organisation European Capital of Culture – Pafos2017 in Cyprus and/or other countries. All rights reserved.</string>
+    <string name="tnt_trademarks" translatable="false">Zoom, \"Zoom Cyprus\" and the Zoom logo are registered trademarks of Track &amp; Talk Ltd in Cyprus and/or other countries. All rights reserved. \n\n All other trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.</string>
+
+    <!--Feedback-->
+    <string name="feedback_text">Your opinion matters.\nSuggest improvements, or tell us about any problems you\'ve encountered.</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="feedback_sent">Thank you! Your feedback has been sent</string>
+
+    <string name="title_activity_splash" translatable="false">SplashActivity</string>
+
+
+    <string name="title_activity_image_viewer">ImageViewerActivity</string>
+
+</resources>
