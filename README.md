@@ -1,7 +1,7 @@
 <img src="art/banner.png"/>
 
 # PAFOS2017 - European Capital of Culture
-[<img src=art/google_play_badge.png alt="Play Store link" style="width: 150px"/>](https://play.google.com/store/apps/details?id=com.trackandtalk.pafos17)
+[<img src=art/google_play_badge.png alt="Play Store link" width=150/>](https://play.google.com/store/apps/details?id=com.trackandtalk.pafos17)
 
 This is the source for *"Pafos2017 - European Capital of Culture"* official Android app.
 
@@ -41,10 +41,10 @@ Pafos2017/app/src/main/res/values/api_endpoints.xml
 Screenshots
 -----------
 
-<img src=art/main_on_pixel.png alt="Main list of events" style="width: 300px"/>
-<img src=art/map_on_pixel.png alt="Venues and landmarks on the map" style="width: 300px"/>
-<img src=art/social_on_pixel.png alt="Links to social media" style="width: 300px"/>
-<img src=art/add_event_on_pixel.gif alt="Adding events to schedule" style="width: 300px"/>
+<img src=art/main_on_pixel.png alt="Main list of events" width=300/>
+<img src=art/map_on_pixel.png alt="Venues and landmarks on the map" width=300/>
+<img src=art/social_on_pixel.png alt="Links to social media" width=300/>
+<img src=art/add_event_on_pixel.gif alt="Adding events to schedule" width=300/>
 
 Support
 -------
