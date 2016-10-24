@@ -41,10 +41,10 @@ Pafos2017/app/src/main/res/values/api_endpoints.xml
 Screenshots
 -----------
 
-<img src=art/main_on_pixel.png alt="Main list of events" width=300/>
-<img src=art/map_on_pixel.png alt="Venues and landmarks on the map" width=300/>
-<img src=art/social_on_pixel.png alt="Links to social media" width=300/>
-<img src=art/add_event_on_pixel.gif alt="Adding events to schedule" width=300/>
+<img src=art/main_on_pixel.png alt="Main list of events" width=200/>
+<img src=art/map_on_pixel.png alt="Venues and landmarks on the map" width=200/>
+<img src=art/social_on_pixel.png alt="Links to social media" width=200/>
+<img src=art/add_event_on_pixel.gif alt="Adding events to schedule" width=200/>
 
 Support
 -------
