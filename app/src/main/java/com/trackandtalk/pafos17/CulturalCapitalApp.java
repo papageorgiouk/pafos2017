@@ -78,10 +78,10 @@ public class CulturalCapitalApp extends Application implements SharedPreferences
                 .build();
         component.inject(this);
 
-//        //  stetho only for debug build
-//        if (BuildConfig.DEBUG) {
-//            Stetho.initializeWithDefaults(this);
-//        }
+        //  stetho only for debug build
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this);
+        }
 
         //  override device locale according to user settings
         langCode = appSettings.getString("language", "en");
