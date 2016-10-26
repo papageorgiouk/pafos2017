@@ -31,10 +31,9 @@ import com.trackandtalk.pafos17.dagger.AppComponent;
 import com.trackandtalk.pafos17.dagger.AppModule;
 import com.trackandtalk.pafos17.dagger.DaggerAppComponent;
 import com.trackandtalk.pafos17.data.AccountManager;
-import com.trackandtalk.pafos17.data.model.Account;
 import com.trackandtalk.pafos17.data.db.DbHelper;
+import com.trackandtalk.pafos17.data.model.Account;
 import com.trackandtalk.pafos17.helper.SharedPrefsHelper;
-import com.trackandtalk.pafos17.notifications.NotificationScheduler;
 
 import java.util.Locale;
 
@@ -43,16 +42,13 @@ import javax.inject.Inject;
 /**
   * Created by Konstantinos Papageorgiou and Charalambos Xinaris
   */
-public class CulturalCapitalApp extends Application implements SharedPreferences.OnSharedPreferenceChangeListener, AccountManager.AccountListener {
+public class CulturalCapitalApp extends Application implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     AppComponent component;
 
     @Inject DbHelper dbHelper;
     @Inject SharedPrefsHelper prefsHelper;
     @Inject SharedPreferences appSettings;
-    private Account account;
-    @Inject AccountManager accountManager;
-    @Inject NotificationScheduler notificationScheduler;
 
     private boolean firstRun;
     private int launchCount;
@@ -98,14 +94,10 @@ public class CulturalCapitalApp extends Application implements SharedPreferences
             }
         });
 
-        account = accountManager.getAccount();
-        accountManager.addAccountListener(this);
-
         firstRun = appSettings.getBoolean("first_run", true);
         if (firstRun) {
             appSettings.edit().putBoolean("first_run", false).apply();
         }
-
     }
 
     public AppComponent getComponent() {
@@ -161,7 +153,7 @@ public class CulturalCapitalApp extends Application implements SharedPreferences
         return prefsHelper;
     }
 
-    public boolean rateDialogCondition() {
+    public boolean shouldshowRateDialog() {
         boolean isRated = appSettings.getBoolean(PREFERENCE_IS_RATED, false);
 
         return launchCount != 0 && launchCount % 5 == 0 && !isRated;
@@ -182,20 +174,5 @@ public class CulturalCapitalApp extends Application implements SharedPreferences
         }
 
         return false;
-    }
-
-    protected Account getAccount() {
-        return this.account;
-    }
-
-    @Override
-    public void onAccountUpdate(Account account) {
-        this.account = account;
-    }
-
-    @Override
-    public void onTerminate() {
-        accountManager.removeAccountListener(this);
-        super.onTerminate();
     }
 }

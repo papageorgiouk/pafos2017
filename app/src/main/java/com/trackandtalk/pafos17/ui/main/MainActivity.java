@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
             }
         });
 
-        if (((CulturalCapitalApp)getApplication()).rateDialogCondition())  {
+        if (((CulturalCapitalApp)getApplication()).shouldshowRateDialog())  {
             showRateDialog();
         }
 
