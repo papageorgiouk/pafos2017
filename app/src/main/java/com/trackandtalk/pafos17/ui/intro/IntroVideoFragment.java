@@ -44,6 +44,7 @@ public class IntroVideoFragment extends Fragment {
 
     private LinearLayout rootLayout;
     private YouTubePlayerSupportFragment youTubePlayerFragment;
+    private YouTubePlayer youTubePlayer;
 
     public static IntroVideoFragment newInstance(@ColorInt int bgColor) {
         IntroVideoFragment sampleSlide = new IntroVideoFragment();
@@ -84,9 +85,7 @@ public class IntroVideoFragment extends Fragment {
             youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_KEY, new YouTubePlayer.OnInitializedListener() {
                 @Override
                 public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                    youTubePlayer.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
-                    youTubePlayer.cueVideo("2B1g1K5xVsU");
-                    youTubePlayer.play();
+                    startYouTube(youTubePlayer);
                 }
 
                 @Override
@@ -98,7 +97,23 @@ public class IntroVideoFragment extends Fragment {
         }
     }
 
+    private void startYouTube(YouTubePlayer youTubePlayer) {
+        this.youTubePlayer = youTubePlayer;
+        this.youTubePlayer.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
+        this.youTubePlayer.cueVideo("2B1g1K5xVsU");
+        this.youTubePlayer.play();
+    }
+
     private void setBackgroundColor(@ColorInt int color) {
         rootLayout.setBackgroundColor(color);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        if (youTubePlayer!= null) {
+            youTubePlayer.release();
+        }
     }
 }
