@@ -523,7 +523,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void displayNoEvents() {
-
+        showLoading(false);
+        eventsAdapter = new EventsAdapter(this, new ArrayList<CulturalEvent>(0), null);
+        eventsRecycler.setAdapter(eventsAdapter);
+        eventsRecycler.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
