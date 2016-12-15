@@ -83,7 +83,7 @@ public class SchedulePresenter extends BasePresenter<ScheduleView> {
                 LocalDate end = e.getFinishDatetime().toLocalDate();
                 while (!start.isAfter(end)) {
                     dates.add(start);
-                    start.plusDays(1);
+                    start = start.plusDays(1);
                 }
             } else {  //  just add the start date
                 dates.add(start);
