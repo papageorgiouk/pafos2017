@@ -19,7 +19,6 @@
 package com.trackandtalk.pafos17.ui.schedule;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,7 +26,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,8 +36,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
@@ -48,7 +44,6 @@ import com.trackandtalk.pafos17.R;
 import com.trackandtalk.pafos17.data.model.CulturalEvent;
 import com.trackandtalk.pafos17.network.EndpointProvider;
 import com.trackandtalk.pafos17.ui.eventdetails.EventActivity;
-import com.trackandtalk.pafos17.ui.utils.ImageUtils;
 import com.trackandtalk.pafos17.ui.utils.PaletteTintTransformation;
 import com.trackandtalk.pafos17.ui.utils.calendar.EventDecorator;
 
@@ -56,7 +51,6 @@ import org.threeten.bp.LocalDate;
 
 import java.util.Calendar;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -148,7 +142,7 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
     }
 
     @Override
-    public void showFavsOnDay(List<CulturalEvent> events) {
+    public void showFavsOnDay(Set<CulturalEvent> events) {
         for (CulturalEvent event : events) {
             final View card = inflater.inflate(R.layout.schedule_card, indicatorLayout, false);
             ImageView image = (ImageView)card.findViewById(R.id.image);

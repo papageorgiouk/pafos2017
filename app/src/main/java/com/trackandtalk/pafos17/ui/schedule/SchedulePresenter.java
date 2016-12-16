@@ -99,19 +99,16 @@ public class SchedulePresenter extends BasePresenter<ScheduleView> {
      * @param dateSelected  the selected date
      */
     void onDateSelected(LocalDate dateSelected) {
-        List<CulturalEvent> eventsOnDay = new ArrayList<>();
+        Set<CulturalEvent> eventsOnDay = new HashSet<>();
 
         for (CulturalEvent event : favourites) {
             LocalDate starting = event.getBeginDatetime().toLocalDate();
             LocalDate ending = null;
             if (event.getFinishDatetime() != null) ending = event.getFinishDatetime().toLocalDate();
 
-            //  if an event's start date falls on selected day, add it
-            if (starting.isEqual(dateSelected)) eventsOnDay.add(event);
-
-            //  if we have an end date and the selected day falls on the date range, add it
-            if (ending != null) {
-                if (isBetween(starting, ending, dateSelected)) eventsOnDay.add(event);
+            //  if start date or end date falls on selected day, add it
+            if (isBetween(starting, ending, dateSelected) || (ending != null && isBetween(starting, ending, dateSelected))) {
+                eventsOnDay.add(event);
             }
         }
 

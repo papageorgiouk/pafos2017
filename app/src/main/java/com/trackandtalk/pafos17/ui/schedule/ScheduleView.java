@@ -23,7 +23,6 @@ import com.trackandtalk.pafos17.ui.base.MvpView;
 
 import org.threeten.bp.LocalDate;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -46,7 +45,7 @@ public interface ScheduleView extends MvpView {
      *
      * @param events
      */
-    void showFavsOnDay(List<CulturalEvent> events);
+    void showFavsOnDay(Set<CulturalEvent> events);
 
     /**
      * Indicate that selected day has no favourites
