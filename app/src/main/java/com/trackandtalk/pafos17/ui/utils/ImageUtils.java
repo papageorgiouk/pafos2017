@@ -95,7 +95,7 @@ public class ImageUtils {
     public static Bitmap tintBitmap(Bitmap bitmap, int color, @FloatRange(from=0, to=1) float alpha) {
         Paint paint = new Paint();
         int colorWithAlpha = applyAlpha(color, alpha);
-        paint.setColorFilter(new PorterDuffColorFilter(colorWithAlpha, PorterDuff.Mode.SRC_IN));
+        paint.setColorFilter(new PorterDuffColorFilter(colorWithAlpha, PorterDuff.Mode.SRC_ATOP));
         Bitmap result = bitmap.copy(Bitmap.Config.ARGB_8888, true);
         Canvas canvas = new Canvas(result);
         canvas.drawBitmap(bitmap, 0, 0, paint);

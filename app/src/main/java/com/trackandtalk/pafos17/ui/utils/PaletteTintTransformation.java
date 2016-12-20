@@ -42,7 +42,7 @@ public class PaletteTintTransformation extends BitmapTransformation {
     protected Bitmap transform(BitmapPool pool, Bitmap toTransform, int outWidth, int outHeight) {
         Palette palette = new Palette.Builder(toTransform).generate();
 
-        return ImageUtils.tintBitmap(toTransform, palette.getDarkMutedColor(Color.DKGRAY), 0.6F);
+        return ImageUtils.tintBitmap(toTransform, palette.getDominantColor(Color.TRANSPARENT), 0.6F);
     }
 
     @Override
