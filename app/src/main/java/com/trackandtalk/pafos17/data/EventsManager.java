@@ -164,7 +164,7 @@ public class EventsManager {
             dateLastChecked = niceDateFormat.format(new Date(lastChecked));
         }
 
-        return "0";
+        return dateLastChecked;
     }
 
 
