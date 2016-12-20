@@ -107,7 +107,7 @@ public class SchedulePresenter extends BasePresenter<ScheduleView> {
             if (event.getFinishDatetime() != null) ending = event.getFinishDatetime().toLocalDate();
 
             //  if start date or end date falls on selected day, add it
-            if (isBetween(starting, ending, dateSelected) || (ending != null && isBetween(starting, ending, dateSelected))) {
+            if (dateSelected.isEqual(starting) || (ending != null && isBetween(starting, ending, dateSelected))) {
                 eventsOnDay.add(event);
             }
         }
