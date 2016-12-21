@@ -52,16 +52,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <TextView
-                    android:id="@+id/event_title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    tools:text="Event Title. Lorem ipsum dolor sit amet "
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/text_secondary_dark"
-                    android:fontFamily="sans-serif-black"
-                    android:layout_weight="1"
-                    />
+                <include layout="@layout/item_event_title"/>
 
             </LinearLayout>
 
