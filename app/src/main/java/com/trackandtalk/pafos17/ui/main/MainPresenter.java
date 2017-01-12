@@ -54,8 +54,6 @@ public class MainPresenter extends BasePresenter<MainActivity> implements Accoun
         if (accountManager.isLoggedIn()) {
             account = accountManager.getAccount();
         }
-
-        fetchEvents();
     }
 
     @Override
