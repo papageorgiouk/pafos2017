@@ -66,7 +66,7 @@ public class MainPresenter extends BasePresenter<MainActivity> implements Accoun
 
         if (events == null || events.size() == 0) {
             getView().showLoading(true);
-            fetchEvents();
+            fetchEvents(false);
         } else {
             provideEvents();
         }
@@ -78,12 +78,12 @@ public class MainPresenter extends BasePresenter<MainActivity> implements Accoun
         accountManager.removeAccountListener(this);
     }
 
-    void onRefresh() {
-        fetchEvents();
+    void onRefresh(boolean purge) {
+        fetchEvents(purge);
     }
 
-    private void fetchEvents() {
-        eventsManager.getNextEvents(new EventsManager.EventsListener() {
+    private void fetchEvents(boolean purge) {
+        eventsManager.getNextEvents(purge, new EventsManager.EventsListener() {
             @Override
             public void onFetchEvents(@Nullable List<CulturalEvent> events, boolean fresh) {
                 if (events != null && events.size() > 0) {

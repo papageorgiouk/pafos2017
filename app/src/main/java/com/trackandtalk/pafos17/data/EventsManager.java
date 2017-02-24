@@ -81,18 +81,20 @@ public class EventsManager {
      *
      * <p>Makes a network request. If successful, updates the database</p>
      *
+     * @param purge download all events if true, otherwise download modified from dateLastChecked
      * @param listener
      */
-    public void getNextEvents(final EventsListener listener) {
+    public void getNextEvents(final boolean purge, final EventsListener listener) {
         this.listener = listener;
 
         String language = getUserLanguage();
-        String dateLastChecked = getDateLastChecked();
+        String dateLastChecked = purge ? "0" : getDateLastChecked();
 
         String endpoint = endpointProvider.getEventsEndpoint();
         apiService.getEvents(endpoint, dateLastChecked, language).enqueue(new Callback<List<CulturalEvent>>() {
             @Override
             public void onResponse(Call<List<CulturalEvent>> call, Response<List<CulturalEvent>> response) {
+                if (purge) dbHelper.deleteAll();
                 onResponseSuccess(response.body());
             }
 

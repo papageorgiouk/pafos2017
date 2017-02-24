@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                presenter.onRefresh();
+                presenter.onRefresh(true);
             }
         });
 
