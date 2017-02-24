@@ -64,6 +64,14 @@ public class IntroVideoFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bgColor = getArguments().getInt(ARG_BG_COLOR);
+
+        if (savedInstanceState == null) {
+            youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
+            getChildFragmentManager().beginTransaction().add(R.id.frag_container, youTubePlayerFragment).commit();
+            getChildFragmentManager().executePendingTransactions();
+        } else {
+            youTubePlayerFragment = (YouTubePlayerSupportFragment)getChildFragmentManager().getFragment(savedInstanceState, "youtubeFragment");
+        }
     }
 
     @Nullable
@@ -71,7 +79,7 @@ public class IntroVideoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_intro_video, container, false);
-        rootLayout = (LinearLayout)view.findViewById(R.id.intro_video_background);
+        rootLayout = (LinearLayout)view.findViewById(R.id.frag_container);
         setBackgroundColor(bgColor);
 
         initYouTube();
@@ -80,27 +88,25 @@ public class IntroVideoFragment extends Fragment {
     }
 
     private void initYouTube() {
-        if (youTubePlayerFragment == null) {
-            youTubePlayerFragment = (YouTubePlayerSupportFragment) getChildFragmentManager().findFragmentById(R.id.youtube_fragment);
-            youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_KEY, new YouTubePlayer.OnInitializedListener() {
-                @Override
-                public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                    startYouTube(youTubePlayer);
-                }
+//        youTubePlayerFragment = (YouTubePlayerSupportFragment) getChildFragmentManager().findFragmentById(R.id.youtube_fragment);
+        youTubePlayerFragment.initialize(BuildConfig.YOUTUBE_KEY, new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+                startYouTube(youTubePlayer);
+            }
 
-                @Override
-                public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                    Snackbar.make(rootLayout, "Failed to load Youtube video", Snackbar.LENGTH_SHORT).show();
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+                Snackbar.make(rootLayout, "Failed to load Youtube video", Snackbar.LENGTH_SHORT).show();
 
-                }
-            });
-        }
+            }
+        });
     }
 
     private void startYouTube(YouTubePlayer youTubePlayer) {
         this.youTubePlayer = youTubePlayer;
         this.youTubePlayer.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
-        this.youTubePlayer.cueVideo("2B1g1K5xVsU");
+        this.youTubePlayer.cueVideo("0A8T8z7cD5U");
         this.youTubePlayer.play();
     }
 
@@ -116,4 +122,13 @@ public class IntroVideoFragment extends Fragment {
             youTubePlayer.release();
         }
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        getChildFragmentManager().putFragment(outState, "youtubeFragment", youTubePlayerFragment);
+    }
+
+
 }

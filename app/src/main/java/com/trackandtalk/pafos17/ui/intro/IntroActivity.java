@@ -40,6 +40,13 @@ import java.util.Locale;
  */
 public class IntroActivity extends AppIntro2 implements IntroLanguageFragment.OnLanguageSelectListener {
 
+    private Fragment fgmLanguage;
+    private Fragment fgmVideo;
+    private Fragment fgmWelcome;
+    private Fragment fgmAddEvent;
+    private Fragment fgmExplore;
+    private Fragment fgmSocial;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,38 +63,39 @@ public class IntroActivity extends AppIntro2 implements IntroLanguageFragment.On
     }
 
     private void addLanguageFragment() {
-        Fragment languageFragment = IntroLanguageFragment.newInstance(ResourcesCompat.getColor(getResources(), R.color.intro_blue, null));
-        addSlide(languageFragment);
+        fgmLanguage = IntroLanguageFragment.newInstance(ResourcesCompat.getColor(getResources(), R.color.intro_blue, null));
+        addSlide(fgmLanguage);
 
     }
 
     private void addRemainingFragments() {
-        Fragment video = IntroVideoFragment.newInstance(ResourcesCompat.getColor(getResources(), android.R.color.black, null));
-        addSlide(video);
+        fgmVideo = IntroVideoFragment.newInstance(ResourcesCompat.getColor(getResources(), android.R.color.black, null));
+        addSlide(fgmVideo);
 
-        Fragment welcome = AppIntro2Fragment.newInstance(
+        fgmWelcome = AppIntro2Fragment.newInstance(
                 getString(R.string.welcome),
                 getString(R.string.stay_updated),
                 R.drawable.screenshot_main,
                 ResourcesCompat.getColor(getResources(), R.color.intro_dark_blue, null));
-        addSlide(welcome);
+        addSlide(fgmWelcome);
 
-        Fragment addEvent = IntroAddEventFragment.newInstance(ResourcesCompat.getColor(getResources(), R.color.intro_light_blue, null));
-        addSlide(addEvent);
+        fgmAddEvent = IntroAddEventFragment.newInstance(ResourcesCompat.getColor(getResources(), R.color.intro_light_blue, null));
+        addSlide(fgmAddEvent);
 
-        Fragment explore = AppIntro2Fragment.newInstance(
+        fgmExplore = AppIntro2Fragment.newInstance(
                 getString(R.string.explore_intro),
                 getString(R.string.discover_pafos),
                 R.drawable.screenshot_map,
                 ResourcesCompat.getColor(getResources(), R.color.intro_muted_blue, null));
-        addSlide(explore);
+        addSlide(fgmExplore);
 
-        addSlide(AppIntro2Fragment.newInstance(
+        fgmSocial = AppIntro2Fragment.newInstance(
                 getString(R.string.social_intro),
                 getString(R.string.social_description),
                 R.drawable.screenshot_social,
                 ResourcesCompat.getColor(getResources(), R.color.intro_green_blue, null)
-        ));
+        );
+        addSlide(fgmSocial);
     }
 
     @Override
@@ -110,6 +118,11 @@ public class IntroActivity extends AppIntro2 implements IntroLanguageFragment.On
     @Override
     public void onLanguageChange(String langCode, Locale locale) {
         ((CulturalCapitalApp)getApplication()).setLocale(langCode, true);
+
+        //  remove all fragments so they'll be recreated with the selected language
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+        }
         recreate();
     }
 

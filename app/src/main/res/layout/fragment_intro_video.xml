@@ -18,21 +18,9 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/intro_video_background"
+              android:id="@+id/frag_container"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center"
-    >
-
-
-    <fragment
-        android:id="@+id/youtube_fragment"
-        android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-
-
-
-</LinearLayout>
+    />
