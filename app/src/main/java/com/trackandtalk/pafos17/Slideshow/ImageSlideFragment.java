@@ -26,13 +26,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.trackandtalk.pafos17.CulturalCapitalApp;
 import com.trackandtalk.pafos17.R;
 import com.trackandtalk.pafos17.data.model.CulturalEvent;
+import com.trackandtalk.pafos17.helper.StringUtils;
 import com.trackandtalk.pafos17.network.EndpointProvider;
 
 import javax.inject.Inject;
@@ -85,7 +85,7 @@ public class ImageSlideFragment extends Fragment {
 
         if (getArguments() != null) {
             this.event = getArguments().getParcelable(EVENT);
-            labelText = event.getEventTitle();
+            labelText = StringUtils.removeAccents(event.getEventTitle());
             imageUrl = endpointProvider.getFullImagesUrl()
                     + event.getImagePath();
 
