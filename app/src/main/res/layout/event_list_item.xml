@@ -52,7 +52,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <include layout="@layout/item_event_title"/>
+                <include
+                    layout="@layout/item_event_title"
+                    />
+
+                <com.trackandtalk.pafos17.ui.widget.IndicatorView
+                    android:id="@+id/now_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:transitionName="@string/indicator_transition"
+                    />
+
 
             </LinearLayout>
 

@@ -67,6 +67,7 @@ import com.trackandtalk.pafos17.data.model.CulturalEvent;
 import com.trackandtalk.pafos17.ui.signin.GoogleSignInActivity;
 import com.trackandtalk.pafos17.ui.utils.DateFormatUtils;
 import com.trackandtalk.pafos17.ui.widget.FavouriteFab;
+import com.trackandtalk.pafos17.ui.widget.IndicatorView;
 
 import org.threeten.bp.LocalDateTime;
 
@@ -91,6 +92,7 @@ public class EventActivity extends AppCompatActivity implements EventView, OnMap
     private TextView eventDescription;
     private NestedScrollView contentView;
     private ImageButton btnGetZoom;
+    private IndicatorView todayIndicator;
 
     //  maps
     SupportMapFragment supportMapFragment;
@@ -127,6 +129,7 @@ public class EventActivity extends AppCompatActivity implements EventView, OnMap
         txtLocation = (TextView) findViewById(R.id.location_text);
         eventDescription = (TextView)findViewById(R.id.event_description);
         btnGetZoom = (ImageButton)findViewById(R.id.get_zoom);
+        todayIndicator = (IndicatorView)findViewById(R.id.today_indicator);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -380,6 +383,16 @@ public class EventActivity extends AppCompatActivity implements EventView, OnMap
         }
 
         txtDatetime.setText(stringBuilder.toString());
+    }
+
+    @Override
+    public void showIsToday(boolean isToday) {
+        if (isToday) {
+            todayIndicator.setVisibility(View.VISIBLE);
+            todayIndicator.startAnimation();
+        } else {
+            todayIndicator.setVisibility(View.GONE);
+        }
     }
 
     @Override

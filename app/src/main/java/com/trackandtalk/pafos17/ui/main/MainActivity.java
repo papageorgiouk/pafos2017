@@ -224,12 +224,19 @@ public class MainActivity extends AppCompatActivity implements MainView {
                 intent.putExtra(CulturalEvent.INTENT_EXTRA_NAME, event);
                 View imageView = holder.itemView.findViewById(R.id.event_image);
                 View titleView = holder.itemView.findViewById(R.id.event_title);
+                View indicatorView = holder.itemView.findViewById(R.id.now_indicator);
 
                 Pair<View, String> imgPair = Pair.create(imageView, getString(R.string.image_transition));
-                Pair<View, String> titlePair = Pair.create(titleView, getString(R.string.title_transition));
+                ArrayList<Pair<View, String>> pairs = new ArrayList<Pair<View, String>>();
+                pairs.add(imgPair);
+                if (indicatorView.getVisibility() == View.VISIBLE) {
+                    Pair<View, String> indicatorPair = Pair.create(indicatorView, getString(R.string.indicator_transition));
+                    pairs.add(indicatorPair);
+                }
 
+                Pair[] pairArray = pairs.toArray(new Pair[pairs.size()]);
                 @SuppressWarnings("unchecked")
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imgPair);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, pairArray);
                 startActivity(intent, optionsCompat.toBundle());
             }
         });

@@ -39,6 +39,7 @@ import com.trackandtalk.pafos17.R;
 import com.trackandtalk.pafos17.data.model.CulturalEvent;
 import com.trackandtalk.pafos17.helper.EventLeadingMarginSpan;
 import com.trackandtalk.pafos17.ui.utils.DateFormatUtils;
+import com.trackandtalk.pafos17.ui.widget.IndicatorView;
 
 import org.threeten.bp.LocalDateTime;
 
@@ -155,6 +156,17 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             } else {
                 holder.itemView.setAlpha(1f);
             }
+
+            //  set ongoing indicator
+            ((EventsVH) holder).setOngoingIndicator(event.isToday());
+        }
+    }
+
+    @Override
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+        if (holder instanceof EventsVH) {
+            ((EventsVH) holder).playAnimations();
         }
     }
 
@@ -225,6 +237,8 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         LinearLayout dateContainer;
         TextView dayMonth;
 
+        IndicatorView ongoingIndicator;
+
         EventsVH(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.event_image);
@@ -233,6 +247,25 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             dateContainer = (LinearLayout)itemView.findViewById(R.id.date_container);
             dayMonth = (TextView)itemView.findViewById(R.id.day_month);
+
+            ongoingIndicator = (IndicatorView)itemView.findViewById(R.id.now_indicator);
+        }
+
+        void setOngoingIndicator(boolean ongoing) {
+            if (ongoing) {
+                ongoingIndicator.setVisibility(View.VISIBLE);
+            } else {
+                ongoingIndicator.setVisibility(View.GONE);
+            }
+        }
+
+        /**
+         * Start animations that might have been stopped when the viewholder got detached
+         */
+        void playAnimations() {
+            if (ongoingIndicator.getVisibility() == View.VISIBLE) {
+                ongoingIndicator.startAnimation();
+            }
         }
     }
 

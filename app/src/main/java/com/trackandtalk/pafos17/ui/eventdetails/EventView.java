@@ -46,6 +46,13 @@ public interface EventView extends MvpView {
      */
     void showDate(LocalDateTime start, @Nullable LocalDateTime end);
 
+    /**
+     * Display whether the event is happening today
+     *
+     * @param isToday
+     */
+    void showIsToday(boolean isToday);
+
     void showImage(String imageUrl);
 
     void showDescription(Spanned string);

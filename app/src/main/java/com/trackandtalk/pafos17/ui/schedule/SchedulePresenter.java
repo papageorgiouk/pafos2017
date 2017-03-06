@@ -20,6 +20,7 @@ package com.trackandtalk.pafos17.ui.schedule;
 
 import com.trackandtalk.pafos17.data.model.CulturalEvent;
 import com.trackandtalk.pafos17.data.db.DbHelper;
+import com.trackandtalk.pafos17.helper.MyDateUtils;
 import com.trackandtalk.pafos17.ui.base.BasePresenter;
 
 import org.threeten.bp.LocalDate;
@@ -107,7 +108,7 @@ public class SchedulePresenter extends BasePresenter<ScheduleView> {
             if (event.getFinishDatetime() != null) ending = event.getFinishDatetime().toLocalDate();
 
             //  if start date or end date falls on selected day, add it
-            if (dateSelected.isEqual(starting) || (ending != null && isBetween(starting, ending, dateSelected))) {
+            if (dateSelected.isEqual(starting) || (ending != null && MyDateUtils.isBetween(starting, ending, dateSelected))) {
                 eventsOnDay.add(event);
             }
         }
@@ -121,18 +122,6 @@ public class SchedulePresenter extends BasePresenter<ScheduleView> {
                 getView().showNoFavsOnDay();
             }
         }
-    }
-
-    /**
-     * Whether a date is between two others
-     *
-     * @param start  start of range
-     * @param end  end of range
-     * @param target  the query
-     * @return  true or false
-     */
-    private boolean isBetween(LocalDate start, LocalDate end, LocalDate target) {
-        return !target.isBefore(start) && !target.isAfter(end);
     }
 
     @Override

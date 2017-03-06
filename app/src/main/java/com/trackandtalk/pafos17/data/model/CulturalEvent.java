@@ -24,8 +24,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
+import com.trackandtalk.pafos17.helper.MyDateUtils;
 
 import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneId;
 
@@ -146,6 +148,18 @@ public class CulturalEvent implements Comparable<CulturalEvent>, Parcelable {
         }
 
         return null;
+    }
+
+    /**
+     * Whether the event starts/ends/is ongoing today
+     *
+     * @return
+     */
+    public boolean isToday() {
+        LocalDate start = getBeginDatetime().toLocalDate();
+        LocalDate finish = getFinishDatetime().toLocalDate();
+
+        return MyDateUtils.happensToday(start, finish);
     }
 
     public EventLocation getLocation() {

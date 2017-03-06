@@ -93,6 +93,9 @@ class EventPresenter extends BasePresenter<EventActivity> {
             if (event.getEventCreators() != null) {
                 getView().showCreators(getCreators(event));
             }
+
+            //  today indicator
+            getView().showIsToday(event.isToday());
         }
     }
 
