@@ -82,6 +82,8 @@
     <string name="event_started_ago">Έχει αρχίσει εδώ και %1$s %2$s</string>
     <string name="hour">ώρα</string>
     <string name="hours">ώρες</string>
+    <string name="today">σήμερα</string>
+
 
     <!--Feedback-->
     <string name="feedback_text">Η γνώμη σας μετράει.\nΚάντε μας εισηγήσεις, ή πείτε μας για όποια προβλήματα έχετε αντιμετωπίσει.</string>

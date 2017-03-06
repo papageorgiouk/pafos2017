@@ -27,4 +27,12 @@
         <attr name="metaButtonBarButtonStyle" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="IndicatorView">
+        <attr name="bgColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="scaleTo" format="float"/>
+        <attr name="cornerRadius" format="dimension"/>
+        <attr name="animDuration" format="integer"/>
+    </declare-styleable>
+
 </resources>

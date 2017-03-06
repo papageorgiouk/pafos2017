@@ -83,6 +83,7 @@
 
     <!--Transitions-->
     <string name="image_transition" translatable="false">image_transition</string>
+    <string name="indicator_transition" translatable="false">indicator_transition</string>
     <string name="title_transition" translatable="false">title_transition</string>
     <string name="transition_google_login" translatable="false">transition_google_login</string>
 
@@ -171,6 +172,7 @@
     <string name="event_started_ago">Started %1$s %2$s ago</string>
     <string name="hour">hour</string>
     <string name="hours">hours</string>
+    <string name="today">today</string>
 
 
     <!--Legal-->
